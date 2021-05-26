@@ -9,16 +9,21 @@ Quick points on how to use typescript
 
 # Working with Types (Syntax & Features)
 
-| Types     | Values                   | About                                                                                |
-| --------- | ------------------------ | ------------------------------------------------------------------------------------ | -------------- | ----------------------------------------------- |
-| `number`  | 1, 1.5, -10              | int, float, double                                                                   |
-| `string`  | 'Hi', "Hello", \`Howdy\` | All text                                                                             |
-| `boolean` | true, false              | no thruthy / falsy values like 0, '', null etc - since this is decided in JS runtime |
-| `object`  | { name: 'James' }        | All JS object (auto infer) ![](images/02z_01_object.png)                             |
-| `array`   | []                       | Types can be flexible (type: any) or strict (number                                  | string)        |
-| `tuple`   | []                       | Fixed length & type Array [number, string]                                           | No Auto inffer | Can be used as global constant with restriction |
-| `enum`    | enum {K1, K2}            | Enumerated List starting with 0 or any number that is assiged                        |
-| `any`     | -                        | Any type, no specific type assignment - same as vanilla JS                           |
+| Types     | Values                   | About                                                                                                       |
+| --------- | ------------------------ | ----------------------------------------------------------------------------------------------------------- |
+| `number`  | 1, 1.5, -10              | int, float, double                                                                                          |
+| `string`  | 'Hi', "Hello", \`Howdy\` | All text                                                                                                    |
+| `boolean` | true, false              | no thruthy / falsy values like 0, '', null etc - since this is decided in JS runtime                        |
+| `object`  | { name: 'James' }        | All JS object (auto infer) ![](images/02z_01_object.png)                                                    |
+| `array`   | []                       | Types can be flexible (type: any) or strict (number \| string)                                              |
+| `tuple`   | []                       | Fixed length & type Array [number, string], No Auto inffer, Can be used as global constant with restriction |
+| `enum`    | enum {K1, K2}            | Enumerated List starting with 0 or any number that is assiged                                               |
+| `any`     | -                        | Any type, no specific type assignment - same as vanilla JS                                                  |
+|           |                          |                                                                                                             |
+| `union`   | type1 \| type2           | string \| number \| boolean                                                                                 |
+| `literal` | "direct-value"           | Having known extact value stored and not just type                                                          |
+| `alias`   | any type combination     | Avoid duplicate type combination by creating Alias for same                                                 |
+|           |                          |                                                                                                             |
 
 ## Type Inference
 
