@@ -12,7 +12,16 @@ function sum(n1: number, n2: number) {
   return n1 + n2;
 }
 
-// Void Type
+function handleSum(n1: number, n2: number, cb: (n: number) => void) {
+  const result = n1 + n2;
+  cb(result);
+}
+
+function sumOfThree(n1: number, n2: number, n3: number) {
+  return n1 + n2 + n3;
+}
+
+// Void return Type - if no return mentioned
 const printResult = (text: number) => {
   console.log("Result : ", text);
 };
@@ -44,12 +53,19 @@ bFunc = sum;
 bFunc = printResult;
 console.log(bFunc(10, 1)); // > undefined
 
-// POINT: arg & return type
+// POINT: arg & return type -> restricting to a format of function/s
 let cFunc: (a: number, b: number) => number;
 cFunc = sum;
 // cFunc = printResult;
 
-let dFunc: (a: number, b: number, cb: (num: number) => void) => number;
-dFunc = () => {};
+let dFunc: (a: number, b: number, cb: (n: number) => void) => void;
+dFunc = handleSum;
 dFunc = sum;
-cFunc = printResult;
+dFunc = printResult;
+// dFunc = sumOfThree;
+handleSum(10, 20, (result) => {
+  console.log(result);
+  // POINT: cb: (n: number) => void means that returned value is may not used in dFunc even though it is returned from cb function
+  // TS does not care about the return type of Callback functions
+  return result;
+});

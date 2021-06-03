@@ -24,7 +24,12 @@ Quick points on how to use typescript
 | `literal`   | "direct-value"           | Having known extact value stored and not just type                                                          |
 | `alias`     | any type combination     | Avoid duplicate type combination by creating Alias for same                                                 |
 |             |                          |                                                                                                             |
-| `undefined` |                          |                                                                                                             |
+| `undefined` | return;                  | if function returns undefined                                                                               |
+| `void`      | no return                | if function with no return                                                                                  |
+|             |                          |                                                                                                             |
+| `unknown`   | Like "any"               | More restrictive type checking than "any"                                                                   |
+| `never`     |                          | If JS execution is stopped (error thrown, infinite loop)                                                    |
+|             |                          |                                                                                                             |
 
 ## Type Inference
 
@@ -38,4 +43,7 @@ Ex.
 ## Function
 
 The return type of function is auto inferred, hence explicit assignment of type is not required
+
+---
+
 https://youtu.be/BwuLxPH8IDs?t=7689
