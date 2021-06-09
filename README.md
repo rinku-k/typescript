@@ -7,7 +7,13 @@ Quick points on how to use typescript
 ![](images/01_ts_features.png)
 ![](images/02_index.png)
 
-# Working with Types (Syntax & Features)
+# Setup
+
+1. Install TS Compiler `npm install -g typescript'
+2. Initialise the project `tsc --init`
+3. You can run `tsc <file/path>`
+
+# Working with Types (Syntax & key points)
 
 | Types       | Values                   | About                                                                                                       |
 | ----------- | ------------------------ | ----------------------------------------------------------------------------------------------------------- |
@@ -40,10 +46,9 @@ Ex.
 -- `let num = 5;` --> Define type `number`
 -- `let num;` --> Define type as `any` --> Instead do `let num:number`
 
-## Function
+## References
 
-The return type of function is auto inferred, hence explicit assignment of type is not required
-
----
-
-https://youtu.be/BwuLxPH8IDs?t=7689
+1. https://youtu.be/BwuLxPH8IDs?t=7689
+2. https://github.com/typescript-cheatsheets/react#reacttypescript-cheatsheets
+3. https://github.com/typescript-cheatsheets/react-native
+4. https://reactnative.dev/docs/0.60/typescript
