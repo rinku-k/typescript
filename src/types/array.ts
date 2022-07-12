@@ -20,3 +20,11 @@ anyHobby = ["H1", "h2", 43, { here: "is Object" }];
 
 myMixedHobby.push("Painting");
 myMixedHobby[1] = 2;
+
+// POINT: Generics
+type NumberArray = Array<number>;
+type ObjectWithNameArray = Array<{ name: string }>;
+let arrayOfNumber: NumberArray = [10, 12];
+let arrayOfObjectName: ObjectWithNameArray = [{ name: "10" }, { name: "213" }];
+
+// POINT: Generics with own type

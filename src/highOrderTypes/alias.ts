@@ -13,3 +13,10 @@ const joinWithAlias = (
     return n1.toString() + n2.toString();
   }
 };
+
+type Person = {
+  first: string;
+  last?: string;
+};
+
+type PersonName = "Rinku" | "Sameer";

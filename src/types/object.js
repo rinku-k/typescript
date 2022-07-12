@@ -4,17 +4,15 @@
 //   name: "Rinku",
 //   experience: 10,
 // };
-
 // POINT: GOOD
 // Auto infer
 // person - object
 // name: string, experience: number
-const personAutoInfer = {
-  name: "Rinku",
-  experience: 10,
-  hobbies: ["A", "B"],
+var personAutoInfer = {
+    name: "Rinku",
+    experience: 10,
+    hobbies: ["A", "B"]
 };
-
 // POINT: NOT REQUIRED
 // Auto infer does assigning types, hence manual definition not requirede
 // const person: {
@@ -24,32 +22,14 @@ const personAutoInfer = {
 //   name: "Rinku",
 //   experience: 10,
 // };
-
 console.log(personAutoInfer.name);
-
 // POINT: This fails as the the TS will not be able to find Type defination of the key
 // console.log(person.nickname);
-
 // POINT: Optional Parameters
-function printName(obj: { first: string; last?: string }) {
-  // POINT: TS will throw error here. Since last is optional param and will not have toLowerCase()
-  // const last = obj.last.toLowerCase();
-
-  // Modern JS syntax
-  const last = obj.last?.toLowerCase();
-
-  console.log("Name: ", obj.first, last);
+function printName(obj) {
+    var _a;
+    var last = (_a = obj.last) === null || _a === void 0 ? void 0 : _a.toLowerCase();
+    console.log("Name: ", obj.first, last);
 }
 printName({ first: "Bob" });
 printName({ first: "Alice", last: "Alisson" });
-
-// POINT: Object with dynamic value
-export const getObjectValue = (
-  anyDynamicObj: { [key: string]: object },
-  searchable: number | string
-): object | null => {
-  if (!anyDynamicObj || Object.keys(anyDynamicObj).length === 0) {
-    return null;
-  }
-  return anyDynamicObj[searchable] || null;
-};

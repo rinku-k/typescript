@@ -26,3 +26,5 @@ console.log(" Add Number : ", add(1, 3));
 
 console.log(" Combine Number: ", combine(1, 3));
 console.log(" Combine String: ", combine("Rinku", "Kumari"));
+
+// POINT: The type boolean itself is actually just an alias for the union true | false.

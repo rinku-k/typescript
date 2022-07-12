@@ -69,3 +69,37 @@ handleSum(10, 20, (result) => {
   // TS does not care about the return type of Callback functions
   return result;
 });
+
+// POINT: Generic Functions
+// By declaring `Type` param in function signature/def, we link i/p type with the return type.
+// If not done the return type of s, n will be empty
+function firstElement<Type>(arr: Type[]): Type {
+  return arr[0];
+}
+const s = firstElement(["a", "b", "c"]); // s is of type 'string'
+const n = firstElement([1, 2, 3]); // n is of type 'number'
+
+// POINT: Multiple infer (here we dont have to define Type, it is auto inferred)
+function map<Input, Output>(
+  arr: Input[],
+  func: (arg: Input) => Output
+): Output[] {
+  return arr.map(func);
+}
+const parsed = map(["1", "2", "3"], (n) => parseInt(n));
+
+// POINT: Contraints - When we want to restrict the generic types
+// https://www.typescriptlang.org/docs/handbook/2/functions.html#constraints
+function longest<Type extends { length: number }>(a: Type, b: Type) {
+  if (a.length >= b.length) {
+    return a;
+  } else {
+    return b;
+  }
+}
+
+const longerArray = longest([1, 2], [1, 2, 3]); // longerArray is of type 'number[]'
+const longerString = longest("alice", "bob"); // longerString is of type 'string'
+// const notOK = longest(10, 100); // Error! Numbers don't have a 'length' property
+
+// POINT: https://www.typescriptlang.org/docs/handbook/2/functions.html#working-with-constrained-values
